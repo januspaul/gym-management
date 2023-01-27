@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MemberController::class, 'display'])->name('viewmembers');
+Route::get('/newmembers', [MemberController::class, 'create'])->name('newmembers');
+Route::get('/deletemembers', [MemberController::class, 'delete'])->name('deletemembers');
+Route::get('/updatemembers', [MemberController::class, 'update'])->name('updatemembers');

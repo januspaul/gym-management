@@ -19,6 +19,13 @@ class MemberController extends Controller
 
     }
 
+    public function update(Request $request){
+        $member = Member::find($request->id);
+        $member->name = $request->name;
+        $member->email = $request->email;
+        $member->save();
+    }
+
     public function delete(Request $request){
         $member = Member::find($request->id);
         $member->delete();

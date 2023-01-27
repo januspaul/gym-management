@@ -14,7 +14,7 @@ use App\Http\Controllers\MemberController;
 |
 */
 
-Route::get('/', [MemberController::class, 'display'])->name('viewmembers');
-Route::get('/newmembers', [MemberController::class, 'create'])->name('newmembers');
-Route::get('/deletemembers', [MemberController::class, 'delete'])->name('deletemembers');
-Route::get('/updatemembers', [MemberController::class, 'update'])->name('updatemembers');
+Route::get('/', [MemberController::class, 'index'])->name('index');
+Route::get('/create', [MemberController::class, 'create'])->name('create');
+Route::get('/delete/{id}', [MemberController::class, 'delete'])->name('delete');
+Route::get('/update/{id}', [MemberController::class, 'update'])->name('update');

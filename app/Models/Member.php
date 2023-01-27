@@ -16,10 +16,10 @@ class Member extends Model
         'email',
     ];
     public function trainers(){
-        return $this->hasOne(Trainer::class);
+        return $this->belongsTo(Trainer::class);
     }
     public function membership(){
-        return $this->hasOne(Membership::class);
+        return $this->belongsTo(Membership::class);
     }
         
     

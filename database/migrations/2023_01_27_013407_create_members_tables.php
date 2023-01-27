@@ -14,14 +14,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('members_tables', function (Blueprint $table) {
+        Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email');
             $table->string('membership_type');
             $table->date('membership_expiration');
-            $table->foreign('trainer_id')->references('id')->on('trainers')->onDelete('cascade');
-            $table->foreign('membership_id')->references('id')->on('membership')->onDelete('cascade');
+            // $table->foreign('trainer_id')->references('id')->on('trainers')->onDelete('cascade');
+            // $table->foreign('membership_id')->references('id')->on('membership')->onDelete('cascade');
             $table->timestamps();
         });
     }
